@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     weather.city = curr.display_location.city;
     weather.conditions = curr.weather;
     weather.temp = curr.temp_c;
-    weather.icon_src = curr.icon_url;
-    setWeatherIcon(curr.icon_url, weather.conditions);
+    weather.icon_src = curr.icon_url.replace(/http:/, "https:");
+    setWeatherIcon(weather.icon_src, weather.conditions);
 
     renderHtml();
   };
