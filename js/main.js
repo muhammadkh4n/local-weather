@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   console.log("dom loaded");
 
   var DOM = document;
-  var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?appid=f3a450ff76113471c9773602b0199a4e";
+  var weatherUrl = "https://api.wunderground.com/api/adb4818b109b517d/conditions/q/";
 
   // find element by id
   var findId = function (id) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // set position and get weather data
   var setPosition = function (pos) {
-    weatherUrl += "&lat=" + pos.coords.latitude + "&lon=" + pos.coords.longitude;
+    weatherUrl += pos.coords.latitude + "," + pos.coords.longitude + ".json";
     fetchData(weatherUrl);
   };
 
@@ -31,18 +31,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // set weather icon.
   var setWeatherIcon = function (icon, alt) {
-    weather.icon_src = "http://openweathermap.org/img/w/" + icon + ".png";
-    var src = weather.icon_src;
-    weather.icon = "<img src='" + src + "' alt='" + alt + "'>";
+    weather.icon = "<img src='" + icon + "' alt='" + alt + "'>";
   };
 
   // set weather from the weather api
   var setWeather = function (data) {
-    weather.country = data.sys.country;
-    weather.city = data.name;
-    weather.conditions = data.weather[0].main;
-    weather.temp = data.main.temp;
-    setWeatherIcon(data.weather[0].icon, weather.conditions);
+    curr = data.current_observation;
+    weather.country = curr.display_location.country;
+    weather.city = curr.display_location.city;
+    weather.conditions = curr.weather;
+    weather.temp = curr.temp_c;
+    weather.icon_src = curr.icon_url;
+    setWeatherIcon(curr.icon_url, weather.conditions);
 
     renderHtml();
   };
@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   };
 
   // convert temperature
-  var convertTemp = function (tempInKelvins, format) {
+  var convertTemp = function (temp, format) {
     switch (format) {
       case "F":
-        return Math.ceil(tempInKelvins * (9 / 5) - 459.67);
+        return Math.ceil(temp * 1.8 + 32);
       default:
-        return Math.ceil(tempInKelvins - 273.15);
+        return Math.ceil(temp);
     }
   };
 
