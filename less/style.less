@@ -1,0 +1,105 @@
+body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #eee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  background-size: 40px;
+  color: rgb(62, 59, 71);
+}
+
+h1 {
+  background-color: #fff;
+  display: inline-block;
+  padding: 20px 30px;
+  box-shadow: 0 4px 30px 7px rgba(40, 40, 40, 0.41);
+
+  a {
+    text-decoration: none;
+    color: rgb(41, 161, 249);
+  }
+
+  span.author {
+    font-size: 0.6em;
+    vertical-align: middle;
+    padding-left: 10px;
+    border-left: 1px solid black;
+  }
+
+  span.disclaim {
+    display: block;
+    font-size: 0.4em;
+    padding-top: 10px;
+  }
+}
+
+.card {
+  border: 1px solid #eee;
+  width: 600px;
+  margin: 10% auto;
+  padding: 50px 0;
+  box-shadow: 0 10px 30px 7px rgba(40, 40, 40, 0.41);
+  background-color: #fff;
+
+  .card-content {
+    h3 {
+      font-size: 2.6em;
+    }
+
+    ul {
+      display: inline-block;
+    }
+
+    li {
+      display: inline-block;
+      float: left;
+    }
+
+    a, #temp {
+      font-size: 2em;
+    }
+
+    #temp {
+      padding-right: 10px;
+      font-size: 3em;
+      vertical-align: 4px;
+      font-weight: bold;
+    }
+
+    #conditions {
+      font-size: 2.8em;
+    }
+
+    a {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 3px 10px;
+      cursor: pointer;
+      background-image: linear-gradient(to bottom, #eee, #ccc);
+
+      &.active {
+        background-color: rgb(173, 173, 173);
+        background-image: linear-gradient(to bottom, #eee, #eee);
+        box-shadow: inset 0 0 5px rgba(73, 73, 73, 0.6);
+        color: rgb(255, 127, 23);
+      }
+    }
+
+    div {
+      padding-top: 30px;
+    }
+
+    div img {
+      width: 100px;
+    }
+  }
+}

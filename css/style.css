@@ -1,0 +1,87 @@
+body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #eee;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#main {
+  background-size: 40px;
+  color: #3e3b47;
+}
+h1 {
+  background-color: #fff;
+  display: inline-block;
+  padding: 20px 30px;
+  box-shadow: 0 4px 30px 7px rgba(40, 40, 40, 0.41);
+}
+h1 a {
+  text-decoration: none;
+  color: #29a1f9;
+}
+h1 span.author {
+  font-size: 0.6em;
+  vertical-align: middle;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+h1 span.disclaim {
+  display: block;
+  font-size: 0.4em;
+  padding-top: 10px;
+}
+.card {
+  border: 1px solid #eee;
+  width: 600px;
+  margin: 10% auto;
+  padding: 50px 0;
+  box-shadow: 0 10px 30px 7px rgba(40, 40, 40, 0.41);
+  background-color: #fff;
+}
+.card .card-content h3 {
+  font-size: 2.6em;
+}
+.card .card-content ul {
+  display: inline-block;
+}
+.card .card-content li {
+  display: inline-block;
+  float: left;
+}
+.card .card-content a,
+.card .card-content #temp {
+  font-size: 2em;
+}
+.card .card-content #temp {
+  padding-right: 10px;
+  font-size: 3em;
+  vertical-align: 4px;
+  font-weight: bold;
+}
+.card .card-content #conditions {
+  font-size: 2.8em;
+}
+.card .card-content a {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 3px 10px;
+  cursor: pointer;
+  background-image: linear-gradient(to bottom, #eee, #ccc);
+}
+.card .card-content a.active {
+  background-color: #adadad;
+  background-image: linear-gradient(to bottom, #eee, #eee);
+  box-shadow: inset 0 0 5px rgba(73, 73, 73, 0.6);
+  color: #ff7f17;
+}
+.card .card-content div {
+  padding-top: 30px;
+}
+.card .card-content div img {
+  width: 100px;
+}

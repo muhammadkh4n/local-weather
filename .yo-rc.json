@@ -1,0 +1,8 @@
+{
+  "generator-bitch": {
+    "applicationName": "local-weather",
+    "viewEngine": "html",
+    "preprocessor": "less",
+    "appFramework": "none"
+  }
+}

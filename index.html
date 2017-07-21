@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Local Weather</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+     rel="stylesheet"
+     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+     crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/ajax.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </head>
+  <body id="main">
+    <h1><i class="fa fa-cloud"></i> Local Weather Engine
+      <span class="author">by <a href="https://www.freecodecamp.com/muhammadkh4n">Muhammad Khan</a></span>
+      <span class="disclaim">* Won't work on Chrome v50 and above. (geolocation disabled on insecure origins)</span>
+    </h1>
+    <div class="card" id="weather-box">
+      <div class="card-content" id="weather-data">
+        <h3 id="location"><i class="fa fa-map-marker"></i> {{location}}</h3>
+        <div>
+          <span id="temp">{{temp}}</span>
+          <ul>
+            <li><a class="active" id="temp-c">&deg;C</a></li>
+            <li><a id="temp-f">&deg;F</a></li>
+          </ul>
+        </div>
+        <div id="icon">
+          {{icon}}
+        </div>
+        <div id="conditions">
+          {{conditions}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
